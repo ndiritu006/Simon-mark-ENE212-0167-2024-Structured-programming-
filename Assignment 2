@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+  float a;
+  float b;
+  int c;
+  float d;
+  printf("enter value a\n");
+  scanf("%f",&a);
+  b=3.1415;
+  c=4;
+  d=a*a*c*b;
+ 
+  printf("result is;%f",d);
+    return 0;
+}
