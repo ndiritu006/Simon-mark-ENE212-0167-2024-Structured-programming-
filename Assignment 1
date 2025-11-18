@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    int a;
+    int b;
+    int c;
+    int d;
+    int e;
+    int f;
+    int g;
+    printf("enter value of a\n");
+    scanf("%d",&a);
+printf("enter value of b\n");
+scanf("%d",&b);
+c=a+b;
+d=a-b;
+e=a*b;
+f=a/b;
+g=a%b;
+char operation[]="add,subtract,multiply,divide,modulus";
+    printf(" type arithmetic operation");
+    scanf("%s",&operation);
+    if(strcmp(operation, "add")==0){
+        printf("result is;%d",c);
+    }
+    if(strcmp(operation, "subtract")==0){
+        printf("result is;%d",d);
+    }
+    if(strcmp(operation, "multiply")==0){
+        printf("result is;%d",e);
+    }
+         if(strcmp(operation, "divide")==0){
+            printf("result is;%d",f);
+        }
+        if(strcmp(operation, "modulus")==0){
+            printf("result is;%d",g);
+        }
+            else{
+            printf("invalid operation");
+            }
+    return 0;
+}
