@@ -1,0 +1,68 @@
+
+#include <stdio.h>
+
+void swapNumbers(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+
+void passByValue(int x) {
+    x = x + 1;
+}
+
+
+void passByReference(int *x) {
+    *x = *x + 1;
+}
+
+int main() {
+
+    int num = 10;
+    int *ptr = &num;
+
+    printf("TASK 2: Display Address of a Variable\n");
+    printf("Value of num: %d\n", num);
+    printf("Address of num: %p\n", &num);
+    printf("Value stored in ptr (address): %p\n", ptr);
+    printf("Value accessed using *ptr: %d\n\n", *ptr);
+
+    int count = 5;
+    int *pCount = &count;
+
+    *pCount = 15;
+
+    printf("TASK 3: Access and Modify Value Using Pointer\n");
+    printf("Updated value of count: %d\n\n", count);
+
+    int num1 = 8, num2 = 12, sum;
+    int *ptr1 = &num1;
+    int *ptr2 = &num2;
+
+    sum = *ptr1 + *ptr2;
+
+    printf("TASK 4: Add Two Numbers Using Pointers\n");
+    printf("Sum: %d\n\n", sum);
+
+    int a = 3, b = 7;
+
+    printf("TASK 5: Swap Two Numbers Using Pointers\n");
+    printf("Before swapping: a = %d, b = %d\n", a, b);
+
+    swapNumbers(&a, &b);
+
+    printf("After swapping: a = %d, b = %d\n\n", a, b);
+
+    int value = 20;
+
+    printf("TASK 6: Pass by Value vs Pass by Reference\n");
+
+    passByValue(value);
+    printf("After pass by value: %d\n", value);
+
+    passByReference(&value);
+    printf("After pass by reference: %d\n", value);
+
+    return 0;
+}
