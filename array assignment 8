@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int rows = 6, cols = 4;
+    int arr[6][4] = {0}; // Initialized with 0s for example
+
+    // Filling with dummy data
+    for(int i = 0; i < rows; i++) {
+        for(int j = 0; j < cols; j++) {
+            arr[i][j] = i + j;
+        }
+    }
+
+    printf("Traversing 2D Array:\n");
+    for(int i = 0; i < rows; i++) {
+        for(int j = 0; j < cols; j++) {
+            printf("%d\t", arr[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
