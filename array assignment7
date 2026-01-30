@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+#define BUFFER_SIZE 5
+
+int buffer[BUFFER_SIZE];
+int head = 0; // Where the next element goes
+int count = 0; // How many elements are currently in the buffer
+
+void insert(int val) {
+    buffer[head] = val;
+    head = (head + 1) % BUFFER_SIZE;
+    if (count < BUFFER_SIZE) count++;
+}
+
+void print_buffer() {
+    printf("Current buffer (oldest -> newest): ");
+    int start = (count < BUFFER_SIZE) ? 0 : head;
+    for (int i = 0; i < count; i++) {
+        printf("%d ", buffer[(start + i) % BUFFER_SIZE]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int val, choice;
+    while(1) {
+        printf("\n1. Insert Sample\n2. Print Data\n3. Exit\nChoice: ");
+        scanf("%d", &choice);
+        if(choice == 1) {
+            printf("Enter value: ");
+            scanf("%d", &val);
+            insert(val);
+        } else if(choice == 2) {
+            print_buffer();
+        } else break;
+    }
+    return 0;
+}
